@@ -1,15 +1,15 @@
 package main
 
-import "net/http"
+import (
+	"log"
+
+	dag "github.com/Way-Flare/dagestan-backend"
+)
 
 func main() {
-	mux := http.NewServeMux()
-
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello world!"))
-	})
-
-	if err := http.ListenAndServe(":8080", mux); err != nil {
-		panic(err)
+	srv := new(dag.Server)
+	if err := srv.Run("8080"); err != nil {
+		log.Fatalf("error occured while running http server: %s", err.Error())
 	}
+
 }
