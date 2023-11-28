@@ -1,8 +1,8 @@
 package dagestan
 
 type User struct {
-	id       int    `json:"id"`
-	name     string `json:"name"`
-	email    string `json:"email"`
-	password string `json:"password"`
+	Id       int    `json:"id"`
+	Name     string `json:"name"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
 }
